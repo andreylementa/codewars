@@ -34,11 +34,16 @@
 
 //console.log(parseInt("0"));
 
-function findShort(s) {
-  arr = s.split(" ");
-  let count = Infinity;
-  arr.forEach((element) => {
-    element.length < count ? (count = element.length) : "";
-  });
-  return count;
+//function findShort(s) {
+//  arr = s.split(" ");
+//  let count = Infinity;
+//  arr.forEach((element) => {
+//    element.length < count ? (count = element.length) : "";
+//  });
+//  return count;
+//}
+
+function filter_list(l) {
+  const arr = l.filter((value) => typeof value === "number");
+  return arr;
 }
