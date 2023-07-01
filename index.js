@@ -8,12 +8,28 @@
 //  return arr5.join("");
 //}
 
-function descendingOrder(n) {
-  const str = String(n);
+//function descendingOrder(n) {
+//  const str = String(n);
 
-  const arr = str.split("").sort((a, b) => (a < b ? 1 : -1));
-  const num = +arr.join("");
-  return num;
+//  const arr = str.split("").sort((a, b) => (a < b ? 1 : -1));
+//  const num = +arr.join("");
+//  return num;
+//}
+
+//descendingOrder(42145);
+
+function validatePIN(pin) {
+  if (pin.length === 4 || pin.length === 6) {
+    const arr = pin.split("");
+    let res = true;
+    arr.forEach((element) => {
+      parseInt(element) || parseInt(element) === 0 ? "" : (res = false);
+    });
+    return res;
+  }
+  return false;
 }
 
-descendingOrder(42145);
+console.log(validatePIN("333234"));
+
+console.log(parseInt("0"));
