@@ -43,7 +43,34 @@
 //  return count;
 //}
 
-function filter_list(l) {
-  const arr = l.filter((value) => typeof value === "number");
-  return arr;
-}
+//function filter_list(l) {
+//  const arr = l.filter((value) => typeof value === "number");
+//  return arr;
+//}
+
+//function digitalRoot(n) {
+//  const str = String(n);
+//  let arr = str.split("");
+//  let sum = 0;
+//  if (arr.length > 1) {
+//    arr = arr.map((num) => {
+//      sum += +num;
+//    });
+//  } else {
+//    sum = arr[0];
+//  }
+//  return sum;
+//}
+
+//console.log(digitalRoot(1993));
+
+const binaryArrayToNumber = (arr) => {
+  const arrReverse = arr.reverse();
+  let sum = 0;
+  arrReverse.forEach((num, index) => {
+    sum += num * 2 ** index;
+  });
+  return sum;
+};
+
+binaryArrayToNumber([1, 1, 1, 1]);
