@@ -18,18 +18,27 @@
 
 //descendingOrder(42145);
 
-function validatePIN(pin) {
-  if (pin.length === 4 || pin.length === 6) {
-    const arr = pin.split("");
-    let res = true;
-    arr.forEach((element) => {
-      parseInt(element) || parseInt(element) === 0 ? "" : (res = false);
-    });
-    return res;
-  }
-  return false;
+//function validatePIN(pin) {
+//  if (pin.length === 4 || pin.length === 6) {
+//    const arr = pin.split("");
+//    let res = true;
+//    arr.forEach((element) => {
+//      parseInt(element) || parseInt(element) === 0 ? "" : (res = false);
+//    });
+//    return res;
+//  }
+//  return false;
+//}
+
+//console.log(validatePIN("333234"));
+
+//console.log(parseInt("0"));
+
+function findShort(s) {
+  arr = s.split(" ");
+  let count = Infinity;
+  arr.forEach((element) => {
+    element.length < count ? (count = element.length) : "";
+  });
+  return count;
 }
-
-console.log(validatePIN("333234"));
-
-console.log(parseInt("0"));
