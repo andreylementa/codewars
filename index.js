@@ -75,11 +75,35 @@
 
 //binaryArrayToNumber([1, 1, 1, 1]);
 
-function squareDigits(num) {
-  const arr = num
-    .toString()
-    .split("")
-    .map((elem) => elem ** 2);
-  return +arr.join("");
+//function squareDigits(num) {
+//  const arr = num
+//    .toString()
+//    .split("")
+//    .map((elem) => elem ** 2);
+//  return +arr.join("");
+//}
+//squareDigits(1234);
+
+function DNAStrand(dna) {
+  const arr = dna.split("");
+  const newArr = arr.map((elem) => {
+    if (elem === "A") {
+      return "T";
+    }
+    if (elem === "T") {
+      return "A";
+    }
+    if (elem === "C") {
+      return "G";
+    }
+    if (elem === "G") {
+      return "C";
+    }
+    //elem === "A" && "T";
+    //elem === "T" && "A";
+    //elem === "C" && "G";
+    //elem === "G" && "C";
+  });
+  return newArr.join("");
 }
-squareDigits(1234);
+DNAStrand("ATTGC");
