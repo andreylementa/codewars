@@ -108,15 +108,22 @@
 //}
 //DNAStrand("ATTGC");
 
-function reverseWords(str) {
-  return str
-    .split(" ")
-    .map((elem) => elem.split("").reverse().join(""))
-    .join(" ");
-}
-reverseWords("This is an example!");
+//function reverseWords(str) {
+//  return str
+//    .split(" ")
+//    .map((elem) => elem.split("").reverse().join(""))
+//    .join(" ");
+//}
+//reverseWords("This is an example!");
 
 //const arr = str
 //    .split(" ")
 //    .map((elem) => elem.split("").reverse().join(""))
 //    .join(" ");
+
+function maskify(cc) {
+  const sliceStr = cc.slice(-4);
+  return sliceStr.padStart(cc.length, "#");
+}
+
+maskify("12");
