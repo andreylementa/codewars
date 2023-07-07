@@ -84,26 +84,39 @@
 //}
 //squareDigits(1234);
 
-function DNAStrand(dna) {
-  const arr = dna.split("");
-  const newArr = arr.map((elem) => {
-    if (elem === "A") {
-      return "T";
-    }
-    if (elem === "T") {
-      return "A";
-    }
-    if (elem === "C") {
-      return "G";
-    }
-    if (elem === "G") {
-      return "C";
-    }
-    //elem === "A" && "T";
-    //elem === "T" && "A";
-    //elem === "C" && "G";
-    //elem === "G" && "C";
-  });
-  return newArr.join("");
+//function DNAStrand(dna) {
+//  const arr = dna.split("");
+//  const newArr = arr.map((elem) => {
+//    if (elem === "A") {
+//      return "T";
+//    }
+//    if (elem === "T") {
+//      return "A";
+//    }
+//    if (elem === "C") {
+//      return "G";
+//    }
+//    if (elem === "G") {
+//      return "C";
+//    }
+//    //elem === "A" && "T";
+//    //elem === "T" && "A";
+//    //elem === "C" && "G";
+//    //elem === "G" && "C";
+//  });
+//  return newArr.join("");
+//}
+//DNAStrand("ATTGC");
+
+function reverseWords(str) {
+  return str
+    .split(" ")
+    .map((elem) => elem.split("").reverse().join(""))
+    .join(" ");
 }
-DNAStrand("ATTGC");
+reverseWords("This is an example!");
+
+//const arr = str
+//    .split(" ")
+//    .map((elem) => elem.split("").reverse().join(""))
+//    .join(" ");
