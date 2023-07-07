@@ -64,13 +64,22 @@
 
 //console.log(digitalRoot(1993));
 
-const binaryArrayToNumber = (arr) => {
-  const arrReverse = arr.reverse();
-  let sum = 0;
-  arrReverse.forEach((num, index) => {
-    sum += num * 2 ** index;
-  });
-  return sum;
-};
+//const binaryArrayToNumber = (arr) => {
+//  const arrReverse = arr.reverse();
+//  let sum = 0;
+//  arrReverse.forEach((num, index) => {
+//    sum += num * 2 ** index;
+//  });
+//  return sum;
+//};
 
-binaryArrayToNumber([1, 1, 1, 1]);
+//binaryArrayToNumber([1, 1, 1, 1]);
+
+function squareDigits(num) {
+  const arr = num
+    .toString()
+    .split("")
+    .map((elem) => elem ** 2);
+  return +arr.join("");
+}
+squareDigits(1234);
