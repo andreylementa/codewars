@@ -176,12 +176,58 @@
 
 //console.log(SeriesSum(5));
 
-function isTriangle(a, b, c) {
-  if (a + b > c && a + c > b && c + b > a) {
-    return true;
+//function isTriangle(a, b, c) {
+//  if (a + b > c && a + c > b && c + b > a) {
+//    return true;
+//  } else {
+//    return false;
+//  }
+//}
+
+//console.log(isTriangle(1, 2, 2));
+
+//function order(words) {
+//  if (words.length === 0) {
+//    return "";
+//  } else {
+//    const arr = words.split(" ");
+//    const newArr = arr.map((elem) => {
+//      for (let i = 0; i < elem.length; i++) {
+//        parseInt(elem[i]) && (elem = elem[i] + elem.replace(elem[i], ""));
+//      }
+//      return elem;
+//    });
+//    const arrResult = [];
+//    //console.log(arr);
+//    //console.log(newArr.sort());
+//    newArr.sort().forEach((element) => {
+//      arr.forEach((elem) => {
+//        //console.log(elem.replace(/[0-9]/g, ""));
+//        element.replace(/[0-9]/g, "") === elem.replace(/[0-9]/g, "") &&
+//          arrResult.push(elem);
+//      });
+//    });
+//    console.log(arrResult);
+//    return arrResult.join(" ");
+//  }
+//}
+
+//console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
+
+function order(words) {
+  const obj = {};
+  if (words.length === 0) {
+    return "";
   } else {
-    return false;
+    const arr = words.split(" ");
+    arr.forEach((element) => {
+      for (let i = 0; i < element.length; i++) {
+        parseInt(element[i]) && (obj[element[i]] = element);
+      }
+    });
+    const resultArr = [...Object.values(obj)];
+    return resultArr.join(" ");
   }
 }
 
-console.log(isTriangle(1, 2, 2));
+order("is2 Thi1s T4est 3a");
