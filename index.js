@@ -162,16 +162,26 @@
 
 //console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
 
-function SeriesSum(n) {
-  let count = 0;
-  let a = 1;
-  let sum = 0;
-  while (count < n) {
-    sum += 1 / a;
-    a += 3;
-    count++;
+//function SeriesSum(n) {
+//  let count = 0;
+//  let a = 1;
+//  let sum = 0;
+//  while (count < n) {
+//    sum += 1 / a;
+//    a += 3;
+//    count++;
+//  }
+//  return sum.toFixed(2);
+//}
+
+//console.log(SeriesSum(5));
+
+function isTriangle(a, b, c) {
+  if (a + b > c && a + c > b && c + b > a) {
+    return true;
+  } else {
+    return false;
   }
-  return sum.toFixed(2);
 }
 
-console.log(SeriesSum(5));
+console.log(isTriangle(1, 2, 2));
