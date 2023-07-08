@@ -137,27 +137,41 @@
 
 //console.log(initials(a, b));
 
-function findOutlier(integers) {
-  let countEven = 0;
-  let countOdd = 0;
-  let evenNum;
-  let oddNum;
-  integers.forEach((elem) => {
-    if (elem % 2 === 0) {
-      countEven += 1;
-      evenNum = elem;
-    } else {
-      countOdd += 1;
-      oddNum = elem;
-    }
-  });
-  if (countEven > 1) {
-    return oddNum;
-  } else {
-    if (countOdd > 1) {
-      return evenNum;
-    }
+//function findOutlier(integers) {
+//  let countEven = 0;
+//  let countOdd = 0;
+//  let evenNum;
+//  let oddNum;
+//  integers.forEach((elem) => {
+//    if (elem % 2 === 0) {
+//      countEven += 1;
+//      evenNum = elem;
+//    } else {
+//      countOdd += 1;
+//      oddNum = elem;
+//    }
+//  });
+//  if (countEven > 1) {
+//    return oddNum;
+//  } else {
+//    if (countOdd > 1) {
+//      return evenNum;
+//    }
+//  }
+//}
+
+//console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
+
+function SeriesSum(n) {
+  let count = 0;
+  let a = 1;
+  let sum = 0;
+  while (count < n) {
+    sum += 1 / a;
+    a += 3;
+    count++;
   }
+  return sum.toFixed(2);
 }
 
-console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
+console.log(SeriesSum(5));
