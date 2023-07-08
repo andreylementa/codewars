@@ -252,18 +252,36 @@
 //}
 //console.log(expandedForm(89892300));
 
-function twoSum(numbers, target) {
-  arrResult = [];
+//function twoSum(numbers, target) {
+//  arrResult = [];
 
-  numbers.forEach((num1, index1) => {
-    numbers.forEach((num2, index2) => {
-      if (num1 + num2 === target && arrResult.length < 2 && index1 !== index2) {
-        arrResult.push(index1);
-        arrResult.push(index2);
-      }
-    });
+//  numbers.forEach((num1, index1) => {
+//    numbers.forEach((num2, index2) => {
+//      if (num1 + num2 === target && arrResult.length < 2 && index1 !== index2) {
+//        arrResult.push(index1);
+//        arrResult.push(index2);
+//      }
+//    });
+//  });
+//  return arrResult;
+//}
+
+//console.log(twoSum([2, 2, 3], 4));
+
+function sortArray(array) {
+  const oddArr = array
+    .filter((elem) => elem % 2 !== 0)
+    .sort((a, b) => (a > b ? 1 : -1));
+  console.log(oddArr);
+  counter = 0;
+  const arr = array.map((elem, index) => {
+    if (elem % 2 !== 0) {
+      elem = oddArr[counter];
+      counter++;
+    }
+    return elem;
   });
-  return arrResult;
+  return arr;
 }
 
-console.log(twoSum([2, 2, 3], 4));
+console.log(sortArray([-1, 8, -7, 6, -5, 4, 3, 2, 1, 0]));
