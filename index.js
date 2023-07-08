@@ -214,20 +214,40 @@
 
 //console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
 
-function order(words) {
-  const obj = {};
-  if (words.length === 0) {
-    return "";
-  } else {
-    const arr = words.split(" ");
-    arr.forEach((element) => {
-      for (let i = 0; i < element.length; i++) {
-        parseInt(element[i]) && (obj[element[i]] = element);
-      }
-    });
-    const resultArr = [...Object.values(obj)];
-    return resultArr.join(" ");
-  }
-}
+//function order(words) {
+//  const obj = {};
+//  if (words.length === 0) {
+//    return "";
+//  } else {
+//    const arr = words.split(" ");
+//    arr.forEach((element) => {
+//      for (let i = 0; i < element.length; i++) {
+//        parseInt(element[i]) && (obj[element[i]] = element);
+//      }
+//    });
+//    const resultArr = [...Object.values(obj)];
+//    return resultArr.join(" ");
+//  }
+//}
 
-order("is2 Thi1s T4est 3a");
+//order("is2 Thi1s T4est 3a");
+
+function expandedForm(num) {
+  const str = num.toString();
+  let zeros = "0".repeat(str.length - 1);
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== "0") {
+      i !== str.length - 1
+        ? (result += `${str[i]}${zeros} + `)
+        : (result += `${str[i]}`);
+    }
+
+    zeros = zeros.slice(0, -1);
+  }
+  if (result.slice(-3) === " + ") {
+    result = result.slice(0, -3);
+  }
+  return result;
+}
+console.log(expandedForm(89892300));
