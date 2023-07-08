@@ -121,9 +121,43 @@
 //    .map((elem) => elem.split("").reverse().join(""))
 //    .join(" ");
 
-function maskify(cc) {
-  const sliceStr = cc.slice(-4);
-  return sliceStr.padStart(cc.length, "#");
+//function maskify(cc) {
+//  const sliceStr = cc.slice(-4);
+//  return sliceStr.padStart(cc.length, "#");
+//}
+
+//maskify("12");
+
+//const a = "java";
+//const b = "script";
+//// J.S.
+//function initials(a, b) {
+//  return `${a[0].toUpperCase()}.${b[0].toUpperCase()}.`;
+//}
+
+//console.log(initials(a, b));
+
+function findOutlier(integers) {
+  let countEven = 0;
+  let countOdd = 0;
+  let evenNum;
+  let oddNum;
+  integers.forEach((elem) => {
+    if (elem % 2 === 0) {
+      countEven += 1;
+      evenNum = elem;
+    } else {
+      countOdd += 1;
+      oddNum = elem;
+    }
+  });
+  if (countEven > 1) {
+    return oddNum;
+  } else {
+    if (countOdd > 1) {
+      return evenNum;
+    }
+  }
 }
 
-maskify("12");
+console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
