@@ -232,22 +232,38 @@
 
 //order("is2 Thi1s T4est 3a");
 
-function expandedForm(num) {
-  const str = num.toString();
-  let zeros = "0".repeat(str.length - 1);
-  let result = "";
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] !== "0") {
-      i !== str.length - 1
-        ? (result += `${str[i]}${zeros} + `)
-        : (result += `${str[i]}`);
-    }
+//function expandedForm(num) {
+//  const str = num.toString();
+//  let zeros = "0".repeat(str.length - 1);
+//  let result = "";
+//  for (let i = 0; i < str.length; i++) {
+//    if (str[i] !== "0") {
+//      i !== str.length - 1
+//        ? (result += `${str[i]}${zeros} + `)
+//        : (result += `${str[i]}`);
+//    }
 
-    zeros = zeros.slice(0, -1);
-  }
-  if (result.slice(-3) === " + ") {
-    result = result.slice(0, -3);
-  }
-  return result;
+//    zeros = zeros.slice(0, -1);
+//  }
+//  if (result.slice(-3) === " + ") {
+//    result = result.slice(0, -3);
+//  }
+//  return result;
+//}
+//console.log(expandedForm(89892300));
+
+function twoSum(numbers, target) {
+  arrResult = [];
+
+  numbers.forEach((num1, index1) => {
+    numbers.forEach((num2, index2) => {
+      if (num1 + num2 === target && arrResult.length < 2 && index1 !== index2) {
+        arrResult.push(index1);
+        arrResult.push(index2);
+      }
+    });
+  });
+  return arrResult;
 }
-console.log(expandedForm(89892300));
+
+console.log(twoSum([2, 2, 3], 4));
