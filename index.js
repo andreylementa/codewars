@@ -286,61 +286,86 @@
 
 //console.log(sortArray([-1, 8, -7, 6, -5, 4, 3, 2, 1, 0]));
 
-function createArr(length, value) {
-  const arr = new Array(length);
-  //for (let i = 0; i < length; i++) {
-  //  arr.push(value);
-  //}
-  return arr.fill(value);
-}
-
-//console.log(createArr(2, "test")); // ['test', 'test']
-//console.log([].fill("test"));
-
-//function uniqArr(arr) {
-//  const arrNew = [];
-//  let counter = 0;
-//  for (let i = 0; i < arr.length; i++) {
-//    //arrNew.includes(arr[i]) ? "" : arrNew.push(arr[i]);
-//    if (!arrNew.includes(arr[i])) {
-//      arrNew[counter] = arr[i];
-//      counter++;
-//    }
-//  }
-//  return arrNew;
+//function createArr(length, value) {
+//  const arr = new Array(length);
+//  //for (let i = 0; i < length; i++) {
+//  //  arr.push(value);
+//  //}
+//  return arr.fill(value);
 //}
 
-//const t = [1, 2, 3, 4, 2, 1, 3, 6, 7];
+////console.log(createArr(2, "test")); // ['test', 'test']
+////console.log([].fill("test"));
 
-//console.log(uniqArr([1, 2, 3, 4, 2, 1, 3, 6, 7]));
+////function uniqArr(arr) {
+////  const arrNew = [];
+////  let counter = 0;
+////  for (let i = 0; i < arr.length; i++) {
+////    //arrNew.includes(arr[i]) ? "" : arrNew.push(arr[i]);
+////    if (!arrNew.includes(arr[i])) {
+////      arrNew[counter] = arr[i];
+////      counter++;
+////    }
+////  }
+////  return arrNew;
+////}
 
-//console.log(new Set(t))
+////const t = [1, 2, 3, 4, 2, 1, 3, 6, 7];
 
-//[].push()
-//[].pop()
-//[].last()
+////console.log(uniqArr([1, 2, 3, 4, 2, 1, 3, 6, 7]));
 
-Array.prototype.last = function () {
-  return this[this.length - 1];
+////console.log(new Set(t))
+
+////[].push()
+////[].pop()
+////[].last()
+
+//Array.prototype.last = function () {
+//  return this[this.length - 1];
+//};
+
+////console.log([1, 2, 3, 4, 5].last());
+
+//function uniqArr(arr) {
+//  const obj = {};
+//  for (let i = 0; i < arr.length; i++) {
+//    if (obj[arr[i]]) {
+//      obj[arr[i]] += 1;
+//    } else {
+//      obj[arr[i]] = 1;
+//    }
+//  }
+
+//  const unqArr = Object.entries(obj).sort((a, b) => (a[1] > b[1] ? -1 : 1));
+
+//  return unqArr.map((elem) => +elem[0]);
+//}
+
+////const arr2 = [1, 2, 3, 4, 2, 1, 3, 6, 3, 2, 2]; // [2, 3, 1, 4, 6]
+
+//console.log(uniqArr([1, 2, 3, 4, 2, 1, 3, 6, 3, 2, 2]));
+
+// ------------------------------------------------------------
+
+// Task 1-----------------------
+
+const obj = {
+  1: "Январь",
+  2: "Февраль",
+  3: "Март",
+  4: "Апрель",
+  5: "Май",
+  6: "Июнь",
+  7: "Июль",
+  8: "Август",
+  9: "Сентябрь",
+  10: "Октябрь",
+  11: "Ноябрь",
+  12: "Декабрь",
 };
 
-//console.log([1, 2, 3, 4, 5].last());
-
-function uniqArr(arr) {
-  const obj = {};
-  for (let i = 0; i < arr.length; i++) {
-    if (obj[arr[i]]) {
-      obj[arr[i]] += 1;
-    } else {
-      obj[arr[i]] = 1;
-    }
-  }
-
-  const unqArr = Object.entries(obj).sort((a, b) => (a[1] > b[1] ? -1 : 1));
-
-  return unqArr.map((elem) => +elem[0]);
+function numToMonth(num) {
+  return obj[num];
 }
 
-//const arr2 = [1, 2, 3, 4, 2, 1, 3, 6, 3, 2, 2]; // [2, 3, 1, 4, 6]
-
-console.log(uniqArr([1, 2, 3, 4, 2, 1, 3, 6, 3, 2, 2]));
+console.log(numToMonth(12));
