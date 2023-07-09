@@ -486,21 +486,21 @@
 
 // CODEWARS -------------------------------------------------
 
-function pigIt(str) {
-  const arr = str.split(" ");
-  let firstLetter;
-  const exceptions = ["!", ".", ",", ";", ":", "?"];
-  const newArr = arr.map((elem1) => {
-    if (!exceptions.some((elem2) => elem1 === elem2)) {
-      firstLetter = elem1[0];
-      elem1 = `${elem1.slice(1)}${firstLetter}ay`;
-    }
-    return elem1;
-  });
-  return newArr.join(" ");
-}
+//function pigIt(str) {
+//  const arr = str.split(" ");
+//  let firstLetter;
+//  const exceptions = ["!", ".", ",", ";", ":", "?"];
+//  const newArr = arr.map((elem1) => {
+//    if (!exceptions.some((elem2) => elem1 === elem2)) {
+//      firstLetter = elem1[0];
+//      elem1 = `${elem1.slice(1)}${firstLetter}ay`;
+//    }
+//    return elem1;
+//  });
+//  return newArr.join(" ");
+//}
 
-console.log(pigIt("Hello world !"));
+//console.log(pigIt("Hello world !"));
 
 //function pigIt(str) {
 //  const arr = str.split(" ");
@@ -521,3 +521,22 @@ console.log(pigIt("Hello world !"));
 //  });
 //  return newArr.join(" ");
 //}
+
+function duplicateCount(text) {
+  const arr = text.split("");
+  const obj = {};
+  let counter = 0;
+  arr.forEach((element) => {
+    if (obj[element.toLowerCase()]) {
+      obj[element.toLowerCase()] += 1;
+    } else {
+      obj[element.toLowerCase()] = 1;
+    }
+  });
+  for (const [key, value] of Object.entries(obj)) {
+    value > 1 && counter++;
+  }
+  return counter;
+}
+
+console.log(duplicateCount("abcde"));
