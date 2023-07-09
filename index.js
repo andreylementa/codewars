@@ -406,6 +406,25 @@
 
 //Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1] одной командой.
 
-const arr = [1, 2, 3];
-arr.reverse();
-console.log(arr);
+//const arr = [1, 2, 3];
+//arr.reverse();
+//console.log(arr);
+
+// Task 5-----------------------
+
+//У нас есть объект
+
+var obj = {
+  name: ["Вася", "Петя", "Коля"],
+  age: [11, 30, 20],
+};
+//Получите Петю из массива arr.
+
+//Посчитайте, сколько элементов находится в name.
+
+function getNameAndCountElements() {
+  console.log(Object.values(obj.name).length);
+  const arr = Object.values(obj.name);
+  console.log(arr[1]);
+}
+getNameAndCountElements();
