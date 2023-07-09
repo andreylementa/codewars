@@ -414,17 +414,31 @@
 
 //У нас есть объект
 
-var obj = {
-  name: ["Вася", "Петя", "Коля"],
-  age: [11, 30, 20],
-};
-//Получите Петю из массива arr.
+//var obj = {
+//  name: ["Вася", "Петя", "Коля"],
+//  age: [11, 30, 20],
+//};
+////Получите Петю из массива arr.
 
-//Посчитайте, сколько элементов находится в name.
+////Посчитайте, сколько элементов находится в name.
 
-function getNameAndCountElements() {
-  console.log(Object.values(obj.name).length);
-  const arr = Object.values(obj.name);
-  console.log(arr[1]);
-}
-getNameAndCountElements();
+//function getNameAndCountElements() {
+//  console.log(Object.values(obj.name).length);
+//  const arr = Object.values(obj.name);
+//  console.log(arr[1]);
+//}
+//getNameAndCountElements();
+
+// Task 6-----------------------
+
+//Поиск по массиву объектов
+
+//Имеется массив объектов
+
+arr = [
+  { id: "1", prop1: "val1" },
+  { id: "2", prop1: "val2" },
+];
+//Этот набор данных формируется выборкой из базы данных. Нужно получить объект, у которого id=2.
+
+console.log(arr.find((elem) => elem.id === "2"));
