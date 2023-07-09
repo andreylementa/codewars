@@ -522,21 +522,36 @@
 //  return newArr.join(" ");
 //}
 
-function duplicateCount(text) {
-  const arr = text.split("");
-  const obj = {};
-  let counter = 0;
-  arr.forEach((element) => {
-    if (obj[element.toLowerCase()]) {
-      obj[element.toLowerCase()] += 1;
-    } else {
-      obj[element.toLowerCase()] = 1;
-    }
-  });
-  for (const [key, value] of Object.entries(obj)) {
-    value > 1 && counter++;
-  }
-  return counter;
-}
+//function duplicateCount(text) {
+//  const arr = text.split("");
+//  const obj = {};
+//  let counter = 0;
+//  arr.forEach((element) => {
+//    if (obj[element.toLowerCase()]) {
+//      obj[element.toLowerCase()] += 1;
+//    } else {
+//      obj[element.toLowerCase()] = 1;
+//    }
+//  });
+//  for (const [key, value] of Object.entries(obj)) {
+//    value > 1 && counter++;
+//  }
+//  return counter;
+//}
 
-console.log(duplicateCount("abcde"));
+//console.log(duplicateCount("abcde"));
+
+function findEvenIndex(arr) {
+  let sum1 = 0;
+  let sum2 = arr.slice(1).reduce((acc, elem) => acc + elem, 0);
+  let i = 0;
+  while (sum1 !== sum2 && i < arr.length - 1) {
+    sum1 = arr.slice(0, i + 1).reduce((acc, elem) => acc + elem, 0);
+    sum2 = arr.slice(i + 2).reduce((acc, elem) => acc + elem, 0);
+    console.log(sum1, sum2, i);
+    i++;
+  }
+
+  return sum1 === sum2 ? i : -1;
+}
+console.log(findEvenIndex([10, -80, 10, 10, 15, 35, 20]));
