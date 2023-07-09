@@ -447,6 +447,77 @@
 
 //У нас есть некий массив с данными:
 
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-//Проверьте, есть ли в этом массиве значение Banana
-console.log(fruits.some((elem) => elem === "Banana"));
+//const fruits = ["Banana", "Orange", "Apple", "Mango"];
+////Проверьте, есть ли в этом массиве значение Banana
+//console.log(fruits.some((elem) => elem === "Banana"));
+
+// Task 8-----------------------
+
+//У вас есть массив
+
+//var arr = ["Hi", "Hello", "Bonjour"];
+////Напишите программу, которая будет проверять, если в этом массиве нет ни одного элемента, будет выдано сообщение, что массив arr пустой. Для проверки количества элементов в массиве нельзя использовать операторы сравнения, например, знак больше ">".
+//console.log(arr.length ? true : false);
+
+// Task 9-----------------------
+
+//Удалите из этого массива элемент 5, и положите туда же 55.
+
+//const array = [2, 5, 9];
+//array.forEach((elem, index) => {
+//  elem === 5 && (array[index] = 55);
+//});
+
+//console.log(array);
+
+// Task 9-----------------------
+
+//Напишите функцию copyArr(arr), которая копирует массив не изменяя оригинал.
+
+//const array = [2, 5, 9];
+
+//let copyArr = [];
+
+//function newCopyArr(arr) {
+//  copyArr = [...arr];
+//}
+//newCopyArr(array);
+//console.log(copyArr);
+
+// CODEWARS -------------------------------------------------
+
+function pigIt(str) {
+  const arr = str.split(" ");
+  let firstLetter;
+  const exceptions = ["!", ".", ",", ";", ":", "?"];
+  const newArr = arr.map((elem1) => {
+    if (!exceptions.some((elem2) => elem1 === elem2)) {
+      firstLetter = elem1[0];
+      elem1 = `${elem1.slice(1)}${firstLetter}ay`;
+    }
+    return elem1;
+  });
+  return newArr.join(" ");
+}
+
+console.log(pigIt("Hello world !"));
+
+//function pigIt(str) {
+//  const arr = str.split(" ");
+//  let firstLetter;
+//  const newArr = arr.map((elem) => {
+//    if (
+//      elem !== "!" &&
+//      elem !== "." &&
+//      elem !== "," &&
+//      elem !== ";" &&
+//      elem !== ":" &&
+//      elem !== "?"
+//    ) {
+//      firstLetter = elem[0];
+//      elem = `${elem.slice(1)}${firstLetter}ay`;
+//    }
+//    return elem;
+//  });
+//  return newArr.join(" ");
+//}
