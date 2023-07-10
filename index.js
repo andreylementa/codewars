@@ -541,17 +541,42 @@
 
 //console.log(duplicateCount("abcde"));
 
-function findEvenIndex(arr) {
-  let sum1 = 0;
-  let sum2 = arr.slice(1).reduce((acc, elem) => acc + elem, 0);
-  let i = 0;
-  while (sum1 !== sum2 && i < arr.length - 1) {
-    sum1 = arr.slice(0, i + 1).reduce((acc, elem) => acc + elem, 0);
-    sum2 = arr.slice(i + 2).reduce((acc, elem) => acc + elem, 0);
-    console.log(sum1, sum2, i);
-    i++;
-  }
+//function findEvenIndex(arr) {
+//  let sum1 = 0;
+//  let sum2 = arr.slice(1).reduce((acc, elem) => acc + elem, 0);
+//  let i = 0;
+//  while (sum1 !== sum2 && i < arr.length - 1) {
+//    sum1 = arr.slice(0, i + 1).reduce((acc, elem) => acc + elem, 0);
+//    sum2 = arr.slice(i + 2).reduce((acc, elem) => acc + elem, 0);
+//    console.log(sum1, sum2, i);
+//    i++;
+//  }
 
-  return sum1 === sum2 ? i : -1;
+//  return sum1 === sum2 ? i : -1;
+//}
+//console.log(findEvenIndex([10, -80, 10, 10, 15, 35, 20]));
+
+//function humanReadable(seconds) {
+//  const hours = Math.floor(seconds / 60 / 60);
+//  const minutes = Math.floor(seconds / 60) - hours * 60;
+//  const sec = seconds % 60;
+//  const str = `${hours.toString().padStart(2, "0")}:${minutes
+//    .toString()
+//    .padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
+//  return str;
+//}
+
+function int32ToIp(int32) {
+  const str1 = int32.toString(2).padStart(32, "0");
+
+  let str2 = "";
+  for (let i = 0; i < 32; i += 8) {
+    str2 += `${str1.slice(i, i + 8)}${i > 23 ? "" : " "}`;
+  }
+  return str2
+    .split(" ")
+    .map((elem) => parseInt(elem, 2))
+    .join(".");
 }
-console.log(findEvenIndex([10, -80, 10, 10, 15, 35, 20]));
+
+console.log(int32ToIp(2149583361));
