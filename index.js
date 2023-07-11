@@ -596,11 +596,30 @@
 
 // Напишите функцию, которая проверяет, является ли элемент именно простым объектом, а не массивом, null и т.п.
 
-const obj = {};
+//const obj = {};
+//const arr = [];
+
+//function isObj(a) {
+//  return typeof a === "object" && !Array.isArray(a) && a !== null;
+//}
+
+//console.log(isObj(null));
+
+//Напишите функцию, которая возвращает вложенный массив вида [[key, value], [key, value]]
+
+const obj = {
+  a: 123,
+  b: 234,
+  c: 345,
+};
 const arr = [];
 
-function isObj(a) {
-  return typeof a === "object" && !Array.isArray(a) && a !== null;
-}
+//obj.__proto__.r = 2333;
 
-console.log(isObj(null));
+function returnArray(obj) {
+  for (let x in obj) {
+    if (obj.hasOwnProperty(x)) arr.push([x, obj[x]]);
+  }
+  return arr;
+}
+console.log(returnArray(obj));
