@@ -664,22 +664,35 @@
 
 //Напишите функцию countIdentic(arr), которая возвращает количество повторяющихся элементов в массиве.
 
-const arr = [1, 1, 2, 2, 3, 4, 5, 6, 7, 6, 8];
+//const arr = [1, 1, 2, 2, 3, 4, 5, 6, 7, 6, 8];
 
-function countIdentic(arr) {
-  let sum = 0;
-  const obj = {};
-  arr.forEach((element) => {
-    if (obj[element]) {
-      obj[element]++;
-    } else {
-      obj[element] = 1;
-    }
-  });
-  for (const property in obj) {
-    obj[property] > 1 && sum++;
-  }
-  return sum;
+//function countIdentic(arr) {
+//  let sum = 0;
+//  const obj = {};
+//  arr.forEach((element) => {
+//    if (obj[element]) {
+//      obj[element]++;
+//    } else {
+//      obj[element] = 1;
+//    }
+//  });
+//  for (const property in obj) {
+//    obj[property] > 1 && sum++;
+//  }
+//  return sum;
+//}
+
+//console.log(countIdentic(arr));
+
+// TASK 4 ----------------
+
+//Напишите функцию expand(arr), которая разворачивает вложенный массив любой глубины.
+
+const arr = [1, 1, [22, 22, 22, [33, 33, [44], 33], 22], 1, 1];
+console.log(arr);
+
+function expand(arr) {
+  return arr.flat(Infinity);
 }
 
-console.log(countIdentic(arr));
+console.log(expand(arr));
