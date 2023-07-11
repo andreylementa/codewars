@@ -381,12 +381,16 @@
 //  Москва: "Россия",
 //  Киев: "Украина",
 //};
-////Перебирая циклом этого объекта, выведите на экран:
+//////Перебирая циклом этого объекта, выведите на экран:
 
-////Минск - это Беларусь, Москва - это Россия, Киев - это Украина
+//////Минск - это Беларусь, Москва - это Россия, Киев - это Украина
 
-//for (const [key, value] of Object.entries(obj)) {
-//  console.log(`${key} - это ${value}`);
+////for (const [key, value] of Object.entries(obj)) {
+////  console.log(`${key} - это ${value}`);
+////}
+
+//for (const key in obj) {
+//  console.log(`${key} - это ${obj[key]}`);
 //}
 
 // Task 3-----------------------
@@ -407,8 +411,12 @@
 //Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1] одной командой.
 
 //const arr = [1, 2, 3];
-//arr.reverse();
-//console.log(arr);
+////arr.reverse();
+//const arrNew = [];
+//for (i = arr.length - 1; i >= 0; i--) {
+//  arrNew.push(arr[i]);
+//}
+//console.log(arrNew);
 
 // Task 5-----------------------
 
@@ -424,8 +432,8 @@
 
 //function getNameAndCountElements() {
 //  console.log(Object.values(obj.name).length);
-//  const arr = Object.values(obj.name);
-//  console.log(arr[1]);
+//  const a = Object.values(obj.name).find((elem) => elem === "Петя");
+//  console.log(a);
 //}
 //getNameAndCountElements();
 
@@ -464,9 +472,11 @@
 //Удалите из этого массива элемент 5, и положите туда же 55.
 
 //const array = [2, 5, 9];
-//array.forEach((elem, index) => {
-//  elem === 5 && (array[index] = 55);
-//});
+//const number5 = array.indexOf(5);
+//array.splice(number5, 1, 55);
+////array.forEach((elem, index) => {
+////  elem === 5 && (array[index] = 55);
+////});
 
 //console.log(array);
 
@@ -476,13 +486,14 @@
 
 //const array = [2, 5, 9];
 
-//let copyArr = [];
-
-//function newCopyArr(arr) {
-//  copyArr = [...arr];
-//}
-//newCopyArr(array);
-//console.log(copyArr);
+////let copyArr = [3].concat(array);
+//const copyArr = JSON.stringify(array) //'[2, 5, 9]'
+//console.log(array);
+////function newCopyArr(arr) {
+////  copyArr = [...arr];
+////}
+////newCopyArr(array);
+//console.log(JSON.parse(copyArr));
 
 // CODEWARS -------------------------------------------------
 
@@ -566,17 +577,30 @@
 //  return str;
 //}
 
-function int32ToIp(int32) {
-  const str1 = int32.toString(2).padStart(32, "0");
+//function int32ToIp(int32) {
+//  const str1 = int32.toString(2).padStart(32, "0");
 
-  let str2 = "";
-  for (let i = 0; i < 32; i += 8) {
-    str2 += `${str1.slice(i, i + 8)}${i > 23 ? "" : " "}`;
-  }
-  return str2
-    .split(" ")
-    .map((elem) => parseInt(elem, 2))
-    .join(".");
+//  let str2 = "";
+//  for (let i = 0; i < 32; i += 8) {
+//    str2 += `${str1.slice(i, i + 8)}${i > 23 ? "" : " "}`;
+//  }
+//  return str2
+//    .split(" ")
+//    .map((elem) => parseInt(elem, 2))
+//    .join(".");
+//}
+
+//console.log(int32ToIp(2149583361));
+
+// Занятия --------------------------------------
+
+// Напишите функцию, которая проверяет, является ли элемент именно простым объектом, а не массивом, null и т.п.
+
+const obj = {};
+const arr = [];
+
+function isObj(a) {
+  return typeof a === "object" && !Array.isArray(a) && a !== null;
 }
 
-console.log(int32ToIp(2149583361));
+console.log(isObj(null));
