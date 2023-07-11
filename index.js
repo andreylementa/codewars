@@ -688,11 +688,35 @@
 
 //Напишите функцию expand(arr), которая разворачивает вложенный массив любой глубины.
 
-const arr = [1, 1, [22, 22, 22, [33, 33, [44], 33], 22], 1, 1];
-console.log(arr);
+//const arr = [1, 1, [22, 22, 22, [33, 33, [44], 33], 22], 1, 1];
+//console.log(arr);
 
-function expand(arr) {
-  return arr.flat(Infinity);
+//function expand(arr) {
+//  return arr.flat(Infinity);
+//}
+
+//console.log(expand(arr));
+
+// TASK 5 ----------------
+
+//Напишите функцию union, которая возвращает массив состоящий только из уникальных элементов из каждого массива.
+
+function union(...data) {
+  //const arr = data.reduce((acc, elem) => acc.concat(elem), []);
+  const arr = data.flat();
+  const resultArr = [];
+
+  const obj = {};
+  arr.forEach((elem) => {
+    if (obj[elem]) {
+      obj[elem] += 1;
+    } else {
+      obj[elem] = 1;
+    }
+  });
+  for (const property in obj) {
+    obj[property] === 1 && resultArr.push(property);
+  }
+  return resultArr;
 }
-
-console.log(expand(arr));
+console.log(union([1, 2, 3], [4, 4, 6], [7, 4, 9]));
