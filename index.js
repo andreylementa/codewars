@@ -647,15 +647,39 @@
 
 //Напишите код, который создаёт массив элементов представляющих собой сумму соответствующих элементов заданных массивов.
 
-const arr1 = [1, 2, 3, 4, 13, 10, 100, 65];
-const arr2 = [3, 10, 14];
+//const arr1 = [1, 2, 3, 4, 13, 10, 100, 65];
+//const arr2 = [3, 10, 14];
 
-function sumElements(arr1, arr2) {
-  const resultArr = [];
-  const maxLength = Math.max(arr1.length, arr2.length);
-  for (i = 0; i < maxLength; i++) {
-    resultArr.push((arr1[i] ?? 0) + (arr2[i] ?? 0));
+//function sumElements(arr1, arr2) {
+//  const resultArr = [];
+//  const maxLength = Math.max(arr1.length, arr2.length);
+//  for (i = 0; i < maxLength; i++) {
+//    resultArr.push((arr1[i] ?? 0) + (arr2[i] ?? 0));
+//  }
+//  return resultArr;
+//}
+//console.log(sumElements(arr1, arr2));
+
+// TASK 3 ----------------
+
+//Напишите функцию countIdentic(arr), которая возвращает количество повторяющихся элементов в массиве.
+
+const arr = [1, 1, 2, 2, 3, 4, 5, 6, 7, 6, 8];
+
+function countIdentic(arr) {
+  let sum = 0;
+  const obj = {};
+  arr.forEach((element) => {
+    if (obj[element]) {
+      obj[element]++;
+    } else {
+      obj[element] = 1;
+    }
+  });
+  for (const property in obj) {
+    obj[property] > 1 && sum++;
   }
-  return resultArr;
+  return sum;
 }
-console.log(sumElements(arr1, arr2));
+
+console.log(countIdentic(arr));
