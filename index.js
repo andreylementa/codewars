@@ -607,19 +607,38 @@
 
 //Напишите функцию, которая возвращает вложенный массив вида [[key, value], [key, value]]
 
-const obj = {
-  a: 123,
-  b: 234,
-  c: 345,
-};
-const arr = [];
+//const obj = {
+//  a: 123,
+//  b: 234,
+//  c: 345,
+//};
+//const arr = [];
 
-//obj.__proto__.r = 2333;
+////obj.__proto__.r = 2333;
 
-function returnArray(obj) {
-  for (let x in obj) {
-    if (obj.hasOwnProperty(x)) arr.push([x, obj[x]]);
-  }
-  return arr;
+//function returnArray(obj) {
+//  for (let x in obj) {
+//    if (obj.hasOwnProperty(x)) arr.push([x, obj[x]]);
+//  }
+//  return arr;
+//}
+//console.log(returnArray(obj));
+
+// HOMEWORK ---------------------------------------------------------------------------------
+
+//Напишите функцию, которая возвращает новый объект без указанных значений.
+
+//({ a: 1, b: 2 }, 'b') => { a: 1 }
+
+function withoutKey(obj, keys) {
+  const splitKeys = keys.split(",");
+  splitKeys.forEach((key) => {
+    if (obj[key]) {
+      delete obj[key];
+    }
+  });
+
+  return obj;
 }
-console.log(returnArray(obj));
+
+console.log(withoutKey({ a: 1, b: 2, c: 3, d: 4 }, "a,b,d"));
