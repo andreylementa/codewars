@@ -701,22 +701,44 @@
 
 //Напишите функцию union, которая возвращает массив состоящий только из уникальных элементов из каждого массива.
 
-function union(...data) {
-  //const arr = data.reduce((acc, elem) => acc.concat(elem), []);
-  const arr = data.flat();
-  const resultArr = [];
+//function union(...data) {
+//  //const arr = data.reduce((acc, elem) => acc.concat(elem), []);
+//  const arr = data.flat();
+//  const resultArr = [];
 
-  const obj = {};
-  arr.forEach((elem) => {
-    if (obj[elem]) {
-      obj[elem] += 1;
-    } else {
-      obj[elem] = 1;
-    }
-  });
-  for (const property in obj) {
-    obj[property] === 1 && resultArr.push(property);
-  }
-  return resultArr;
+//  const obj = {};
+//  arr.forEach((elem) => {
+//    if (obj[elem]) {
+//      obj[elem] += 1;
+//    } else {
+//      obj[elem] = 1;
+//    }
+//  });
+//  for (const property in obj) {
+//    obj[property] === 1 && resultArr.push(property);
+//  }
+//  return resultArr;
+//}
+//console.log(union([1, 2, 3], [4, 4, 6], [7, 4, 9]));
+
+// TASK 6 ----------------
+
+//Напишите функцию, которая делает поверхностную проверку объекта на пустоту.
+// Ожидаемый результат: ({}) => true,
+
+//function isEmptyObj(obj) {
+//  return Object.keys(obj).length ? "false" : "true";
+//}
+
+//console.log(isEmptyObj({ 1: [] }));
+
+// TASK 7 ----------------
+
+//Напишите функцию, которая поверхностно сравнивает два объекта.
+//Ожидаемый результат: True если объекты идентичны, false если объекты разные ({ a: 1, b: 1 }, { a: 1, b: 1 }) => true
+
+function isEqualObjects(obj1, obj2) {
+  return JSON.stringify(obj1) === JSON.stringify(obj2) ? true : false;
 }
-console.log(union([1, 2, 3], [4, 4, 6], [7, 4, 9]));
+
+console.log(isEqualObjects({ a: 1, b: 1 }, { a: 1, b: 1 }));
